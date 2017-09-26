@@ -57,18 +57,23 @@ def steps_4(value):
 	if(value<0):
 		for i in range (0,abs(value)):
 			step_4(pas)
-			time.sleep(.01)
+			time.sleep(.002)
 			pas+=1
 			if(pas>=5):
 				pas=1;
 	else:
 		for i in range (0,abs(value)):
 			step_4(pas)
-			time.sleep(.01)
+			time.sleep(.002)
 			if(pas==1):
 				pas=5;
 			pas-=1
 
+start=time.time();
 steps_4(200)
-steps_4(-200)
+stop=time.time();
+spr = stop-start
+rps=1/spr
+rpm=rps*60;
+print (rpm)
 step_4(0)
