@@ -57,14 +57,14 @@ def steps_4(value):
 	if(value<0):
 		for i in range (0,abs(value)):
 			step_4(pas)
-			time.sleep(.002)
+			time.sleep(.04)
 			pas+=1
 			if(pas>=5):
 				pas=1;
 	else:
 		for i in range (0,abs(value)):
 			step_4(pas)
-			time.sleep(.002)
+			time.sleep(.04)
 			if(pas==1):
 				pas=5;
 			pas-=1
