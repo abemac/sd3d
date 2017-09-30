@@ -27,8 +27,6 @@ class Stepper:
 		GPIO.setup(pin_3A,GPIO.OUT)
 		GPIO.setup(pin_4A,GPIO.OUT)
 		
-		
-	
 	def setSpeed(self,speed):
 		self.speed = speed;
 	
@@ -59,15 +57,14 @@ class Stepper:
 			GPIO.output(self.pin_3A,0)
 			GPIO.output(self.pin_4A,0)
 	
-	def step(self,numsteps):
+	def rotate_steps(self,numsteps):
 		if(numsteps<0):
 			for i in range (0,abs(numsteps)):
 				self.state+=1
 				if(self.state>=5):
 					self.state=1;
 				self.update_GPIOs()
-				time.sleep(self.speed)
-				
+				time.sleep(self.speed)		
 		else:
 			for i in range (0,abs(numsteps)):
 				if(self.state<=1):
@@ -78,9 +75,9 @@ class Stepper:
 				
 	def rotate_deg(self,degrees):
 		steps=int(self.ticksperrev * (degrees/360.0))
-		self.step(steps)
+		self.rotate_steps(steps)
 	def rotate_rot(self,rotations):
 		steps=int(self.ticksperrev * rotations)
-		self.step(steps)
-	def rotate(self,degrees):
-		self.rotate_deg(degrees)
+		self.rotate_steps(steps)
+	def rotate(self,rotatons):
+		self.rotate_rot(rotatons)
