@@ -1,9 +1,9 @@
 import abc
 import time
 
-SPEED_VERY_FAST=150
-SPEED_FAST=	120
-SPEED_MEDIUM_FAST=100
+SPEED_VERY_FAST=130
+SPEED_FAST=	100
+SPEED_MEDIUM_FAST=80
 SPEED_MEDIUM = 60
 SPEED_MEDIUM_SLOW = 30
 SPEED_SLOW=20
@@ -97,6 +97,7 @@ class Quad:
 			
 		
 		def update_GPIOs(self):
+			#print(self.state)
 			if self.state==1:
 				Quad.OLATB_VAL|=0b00001010
 				Quad.OLATB_VAL&=0b11111010
