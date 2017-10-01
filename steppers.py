@@ -1,11 +1,11 @@
 import abc
 import time
 
-SPEED_VERY_FAST=130
-SPEED_FAST=	100
-SPEED_MEDIUM_FAST=80
-SPEED_MEDIUM = 60
-SPEED_MEDIUM_SLOW = 30
+SPEED_VERY_FAST=300
+SPEED_FAST=	225
+SPEED_MEDIUM_FAST=175
+SPEED_MEDIUM = 100
+SPEED_MEDIUM_SLOW = 50
 SPEED_SLOW=20
 SPEED_VERY_SLOW=10
 
@@ -97,7 +97,6 @@ class Quad:
 			
 		
 		def update_GPIOs(self):
-			#print(self.state)
 			if self.state==1:
 				Quad.OLATB_VAL|=0b00001010
 				Quad.OLATB_VAL&=0b11111010
@@ -109,7 +108,7 @@ class Quad:
 				Quad.OLATB_VAL&=0b11110101
 			elif self.state==4:
 				Quad.OLATB_VAL|=0b00001001
-				Quad.OLATB_VAL|=0b11111001
+				Quad.OLATB_VAL&=0b11111001
 			elif self.state==0:
 				quad.OLATB_VAL&=0b11110000
 			self.pi.i2c_write_byte_data(self.i2c,Quad.OLATB,Quad.OLATB_VAL)
