@@ -77,6 +77,9 @@ class Quad:
 		pi.i2c_write_byte_data(self.i2c,Quad.OLATB,0x00) ;#Set B outputs as 0
 		
 		self.s1= self._stepper1(pi,self.i2c)
+		self.s2= self._stepper2(pi,self.i2c)
+		self.s3= self._stepper3(pi,self.i2c)
+		self.s4= self._stepper4(pi,self.i2c)
 		
 	def close(self):
 		self.pi.i2c_write_byte_data(self.i2c,Quad.OLATA,0x00) ;#Set A outputs as 0
@@ -87,6 +90,12 @@ class Quad:
 	def getStepper(self,num):
 		if num==1:
 			return self.s1
+		elif num==2:
+			return self.s2
+		elif num==3:
+			return self.s3
+		elif num==4:
+			return self.s4
 		else:
 			print ("num must be 1-4")
 		
@@ -110,6 +119,73 @@ class Quad:
 				Quad.OLATB_VAL|=0b00001001
 				Quad.OLATB_VAL&=0b11111001
 			elif self.state==0:
-				quad.OLATB_VAL&=0b11110000
+				Quad.OLATB_VAL&=0b11110000
 			self.pi.i2c_write_byte_data(self.i2c,Quad.OLATB,Quad.OLATB_VAL)
 		
+	class _stepper2(_stepper):
+		
+		def __init__(self,pi,i2c):
+			super().__init__(pi,i2c)
+			
+		
+		def update_GPIOs(self):
+			if self.state==1:
+				Quad.OLATB_VAL|=0b10100000
+				Quad.OLATB_VAL&=0b10101111
+			elif self.state==2:
+				Quad.OLATB_VAL|=0b01100000
+				Quad.OLATB_VAL&=0b01101111
+			elif self.state==3:
+				Quad.OLATB_VAL|=0b01010000
+				Quad.OLATB_VAL&=0b01011111
+			elif self.state==4:
+				Quad.OLATB_VAL|=0b10010000
+				Quad.OLATB_VAL&=0b10011111
+			elif self.state==0:
+				Quad.OLATB_VAL&=0b00001111
+			self.pi.i2c_write_byte_data(self.i2c,Quad.OLATB,Quad.OLATB_VAL)
+	
+	class _stepper3(_stepper):
+		
+		def __init__(self,pi,i2c):
+			super().__init__(pi,i2c)
+		
+		def update_GPIOs(self):
+			if self.state==1:
+				Quad.OLATA_VAL|=0b10100000
+				Quad.OLATA_VAL&=0b10101111
+			elif self.state==2:
+				Quad.OLATA_VAL|=0b01100000
+				Quad.OLATA_VAL&=0b01101111
+			elif self.state==3:
+				Quad.OLATA_VAL|=0b01010000
+				Quad.OLATA_VAL&=0b01011111
+			elif self.state==4:
+				Quad.OLATA_VAL|=0b10010000
+				Quad.OLATA_VAL&=0b10011111
+			elif self.state==0:
+				Quad.OLATA_VAL&=0b00001111
+			self.pi.i2c_write_byte_data(self.i2c,Quad.OLATA,Quad.OLATA_VAL)
+	
+	class _stepper4(_stepper):
+		
+		def __init__(self,pi,i2c):
+			super().__init__(pi,i2c)
+			
+		
+		def update_GPIOs(self):
+			if self.state==1:
+				Quad.OLATA_VAL|=0b00001010
+				Quad.OLATA_VAL&=0b11111010
+			elif self.state==2:
+				Quad.OLATA_VAL|=0b00000110
+				Quad.OLATA_VAL&=0b11110110
+			elif self.state==3:
+				Quad.OLATA_VAL|=0b00000101
+				Quad.OLATA_VAL&=0b11110101
+			elif self.state==4:
+				Quad.OLATA_VAL|=0b00001001
+				Quad.OLATA_VAL&=0b11111001
+			elif self.state==0:
+				Quad.OLATA_VAL&=0b11110000
+			self.pi.i2c_write_byte_data(self.i2c,Quad.OLATA,Quad.OLATA_VAL)
