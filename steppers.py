@@ -1,6 +1,7 @@
 import abc
 import time
-
+from threading import Thread
+import queue
 SPEED_VERY_FAST=300
 SPEED_FAST=	225
 SPEED_MEDIUM_FAST=175
@@ -21,7 +22,8 @@ class _stepper:
 		self.ticksperrev=200;
 		self.setSpeed(SPEED_MEDIUM);
 		self.state=0;
-		
+		self.queue=queue.Queue()
+		self.startWorkerThread()
 		
 	def setSpeed(self,rpm):
 		self.delay=(60.0)/(rpm*self.ticksperrev);
@@ -30,6 +32,7 @@ class _stepper:
 	def update_GPIOs(self):
 		"""implement this specific to each motor"""
 		return;
+	
 		
 	def rotate_steps(self,numsteps):
 		if(numsteps<0):
@@ -55,9 +58,23 @@ class _stepper:
 		steps=int(self.ticksperrev * rotations)
 		self.rotate_steps(steps)
 		
-	def rotate(self,rotatons):
-		self.rotate_rot(rotatons)
-
+	def _rotate(self,rotations):
+		self.rotate_rot(rotations)
+	def rotate(self,rotations):
+		self.queue.put(lambda: self._rotate(rotations))
+	def worker(self):
+		while True:
+			action = self.queue.get();
+			action();
+			self.queue.task_done()
+	def startWorkerThread(self):
+		t = Thread(target=self.worker)
+		t.daemon = True
+		t.start()	
+	
+	def off(self):
+		self.state=0;
+		self.update_GPIOs()
 
 class Quad:
 	IODIRA=0x00

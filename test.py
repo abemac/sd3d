@@ -4,11 +4,30 @@ import time
 pi = pigpio.pi()
 
 quad = steppers.Quad(0x20,pi)
-s1 = quad.getStepper(4)
-s1.setSpeed(300)
-s1.rotate(5)
-time.sleep(1)
-s1.rotate(-5)
 
+s2 = quad.getStepper(2)
+s2.setSpeed(100)
+s2.rotate(1)
+s2.rotate(-1)
+#s2.off();
+
+s1 = quad.getStepper(1)
+s1.setSpeed(100)
+s1.rotate(1)
+s1.rotate(-1)
+#s1.off()
+'''
+s3 = quad.getStepper(3)
+s3.setSpeed(100)
+s3.rotate(1)
+s3.rotate(-1)
+s3.off()
+
+s4 = quad.getStepper(4)
+s4.setSpeed(100)
+s4.rotate(1)
+s4.rotate(-1)
+s4.off()
+'''
 input("press [Enter] to exit")
 quad.close();
