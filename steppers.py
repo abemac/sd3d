@@ -23,7 +23,7 @@ class _stepper:
 		self.setSpeed(SPEED_MEDIUM);
 		self.state=0;
 		self.queue=queue.Queue()
-		self.startWorkerThread()
+		self._startWorkerThread()
 		
 	def setSpeed(self,rpm):
 		self.delay=(60.0)/(rpm*self.ticksperrev);
@@ -34,7 +34,7 @@ class _stepper:
 		return;
 	
 		
-	def rotate_steps(self,numsteps):
+	def _rotate_steps(self,numsteps):
 		if(numsteps<0):
 			for i in range (0,abs(numsteps)):
 				self.state+=1
@@ -50,29 +50,29 @@ class _stepper:
 				self.update_GPIOs()
 				time.sleep(self.delay)
 				
-	def rotate_deg(self,degrees):
+	def _rotate_deg(self,degrees):
 		steps=int(self.ticksperrev * (degrees/360.0))
-		self.rotate_steps(steps)
+		self._rotate_steps(steps)
 		
-	def rotate_rot(self,rotations):
+	def _rotate_rot(self,rotations):
 		steps=int(self.ticksperrev * rotations)
-		self.rotate_steps(steps)
+		self._rotate_steps(steps)
 		
 	def _rotate(self,rotations):
-		self.rotate_rot(rotations)
+		self._rotate_rot(rotations)
 	def rotate(self,rotations):
 		self.queue.put(lambda: self._rotate(rotations))
-	def worker(self):
+	def _worker(self):
 		while True:
 			action = self.queue.get();
 			action();
 			self.queue.task_done()
-	def startWorkerThread(self):
-		t = Thread(target=self.worker)
+	def _startWorkerThread(self):
+		t = Thread(target=self._worker)
 		t.daemon = True
 		t.start()	
-	
-	def off(self):
+		
+	def _off(self):
 		self.state=0;
 		self.update_GPIOs()
 
