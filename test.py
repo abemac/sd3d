@@ -41,6 +41,6 @@ s1.rotate(-1)
 s3.rotate(1)
 s4.rotate(1)
 
-
+quad.barrier()
 input("press [Enter] to exit")
 quad.close();
