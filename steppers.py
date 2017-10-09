@@ -120,6 +120,8 @@ class Quad:
 			return self.s4
 		else:
 			print ("num must be 1-4")
+	def getSteppers(self):
+		return self.s1,self.s2,self.s3,self.s4
 	def barrier(self):
 		self.s1.barrier();
 		self.s2.barrier();
