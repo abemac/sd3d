@@ -10,7 +10,7 @@ s1.setSpeed(steppers.SPEED_MEDIUM)
 s1.rotate(5)
 
 s1.barrier()
-s1.setSpeed(steppers.SPEED_VERY_FAST)
+s1.setSpeed(steppers.SPEED_FAST)
 s1.rotate(-5)
 s1.barrier()
 
