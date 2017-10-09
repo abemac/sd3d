@@ -2,9 +2,9 @@ import abc
 import time
 from threading import Thread
 import queue
-SPEED_VERY_FAST=300
-SPEED_FAST=	225
-SPEED_MEDIUM_FAST=175
+SPEED_VERY_FAST=500
+SPEED_FAST=	400
+SPEED_MEDIUM_FAST=300
 SPEED_MEDIUM = 100
 SPEED_MEDIUM_SLOW = 50
 SPEED_SLOW=20
@@ -17,19 +17,21 @@ class _stepper:
 	
 	
 	def __init__(self,pi,i2c):
+		self.queue=queue.Queue()
 		self.i2c=i2c;	
 		self.pi=pi;
 		self.ticksperrev=200;
 		self.setSpeed(SPEED_MEDIUM);
 		self.state=0;
-		self.queue=queue.Queue()
 		self._startWorkerThread()
 		
-	def setSpeed(self,rpm):
+	def _setSpeed(self,rpm):
 		self.delay=(60.0)/(rpm*self.ticksperrev);
+	def setSpeed(self,rpm):
+		self.queue.put(lambda: self._setSpeed(rpm));
 		
 	@abc.abstractmethod
-	def update_GPIOs(self):
+	def _update_GPIOs(self):
 		"""implement this specific to each motor"""
 		return;
 	
@@ -40,28 +42,26 @@ class _stepper:
 				self.state+=1
 				if(self.state>=5):
 					self.state=1;
-				self.update_GPIOs()
+				self._update_GPIOs()
 				time.sleep(self.delay)		
 		else:
 			for i in range (0,abs(numsteps)):
 				if(self.state<=1):
 					self.state=5;
 				self.state-=1
-				self.update_GPIOs()
+				self._update_GPIOs()
 				time.sleep(self.delay)
 				
 	def _rotate_deg(self,degrees):
 		steps=int(self.ticksperrev * (degrees/360.0))
 		self._rotate_steps(steps)
-		
+	def rotate_deg(self,degrees):
+		self.queue.put(lambda: self._rotate_deg(degrees))
 	def _rotate_rot(self,rotations):
 		steps=int(self.ticksperrev * rotations)
 		self._rotate_steps(steps)
-		
-	def _rotate(self,rotations):
-		self._rotate_rot(rotations)
 	def rotate(self,rotations):
-		self.queue.put(lambda: self._rotate(rotations))
+		self.queue.put(lambda: self._rotate_rot(rotations))
 	def _worker(self):
 		while True:
 			action = self.queue.get();
@@ -75,6 +75,11 @@ class _stepper:
 	def _off(self):
 		self.state=0;
 		self.update_GPIOs()
+	def off(self):
+		self.queue.put(lambda: self._off())
+		
+	def barrier(self):
+		self.queue.join()
 
 class Quad:
 	IODIRA=0x00
@@ -122,7 +127,7 @@ class Quad:
 			super().__init__(pi,i2c)
 			
 		
-		def update_GPIOs(self):
+		def _update_GPIOs(self):
 			if self.state==1:
 				Quad.OLATB_VAL|=0b00001010
 				Quad.OLATB_VAL&=0b11111010
@@ -145,7 +150,7 @@ class Quad:
 			super().__init__(pi,i2c)
 			
 		
-		def update_GPIOs(self):
+		def _update_GPIOs(self):
 			if self.state==1:
 				Quad.OLATB_VAL|=0b10100000
 				Quad.OLATB_VAL&=0b10101111
@@ -167,7 +172,7 @@ class Quad:
 		def __init__(self,pi,i2c):
 			super().__init__(pi,i2c)
 		
-		def update_GPIOs(self):
+		def _update_GPIOs(self):
 			if self.state==1:
 				Quad.OLATA_VAL|=0b10100000
 				Quad.OLATA_VAL&=0b10101111
@@ -190,7 +195,7 @@ class Quad:
 			super().__init__(pi,i2c)
 			
 		
-		def update_GPIOs(self):
+		def _update_GPIOs(self):
 			if self.state==1:
 				Quad.OLATA_VAL|=0b00001010
 				Quad.OLATA_VAL&=0b11111010
