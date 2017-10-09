@@ -36,7 +36,6 @@ s1.rotate(1)
 s3.rotate(1)
 s4.rotate(-1)
 
-
 s2.rotate(-1)
 s1.rotate(-1)
 s3.rotate(1)

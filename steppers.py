@@ -120,7 +120,11 @@ class Quad:
 			return self.s4
 		else:
 			print ("num must be 1-4")
-		
+	def barrier(self):
+		self.s1.barrier();
+		self.s2.barrier();
+		self.s3.barrier();
+		self.s4.barrier();
 	class _stepper1(_stepper):
 		
 		def __init__(self,pi,i2c):
