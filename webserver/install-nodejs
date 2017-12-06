@@ -1,0 +1,5 @@
+cp -R bin/* /usr/bin/
+cp -R include/* /usr/include/
+cp -R lib/* /usr/lib/
+cp -R share/* /usr/share/
+
