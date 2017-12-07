@@ -9,8 +9,13 @@ import {DiagnosticsDialog} from './diagnostics/diagnostics.component'
 import {ViewDialog} from './view/view.component'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {MatCardModule,MatGridListModule,MatDialogModule} from '@angular/material'
+import {MatCardModule,MatGridListModule,MatDialogModule,
+  MatButtonModule,MatStepperModule,MatFormFieldModule,
+  MatInputModule
+} from '@angular/material'
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FileUploadModule} from 'ng2-file-upload'
 @NgModule({
   declarations: [
     AppComponent,CreateDialog,AboutDialog,DiagnosticsDialog,ViewDialog
@@ -20,7 +25,15 @@ import {MatCardModule,MatGridListModule,MatDialogModule} from '@angular/material
     BrowserAnimationsModule,
     MatCardModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FileUploadModule
+    
   ],
   entryComponents: [
     CreateDialog,AboutDialog,DiagnosticsDialog,ViewDialog

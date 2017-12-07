@@ -18,8 +18,8 @@ export class AppComponent {
 
   openCreateDialog(){
     let dialogRef = this.dialog.open(CreateDialog, {
-      width: '80%',
-      height:'80%',
+      // width: '80%',
+      // height:'80%',
       data: { name: "this.name", animal: "this.animal" }
     });
 
@@ -31,8 +31,8 @@ export class AppComponent {
   
   openViewDialog(){
     let dialogRef = this.dialog.open(ViewDialog, {
-      width: '80%',
-      height:'80%',
+      // width: '80%',
+      // height:'80%',
       data: { name: "this.name", animal: "this.animal" }
     });
 
@@ -44,8 +44,8 @@ export class AppComponent {
   
   openDiagnosticsDialog(){
     let dialogRef = this.dialog.open(DiagnosticsDialog, {
-      width: '80%',
-      height:'80%',
+      // width: '80%',
+      // height:'80%',
       data: { name: "this.name", animal: "this.animal" }
     });
 
@@ -57,8 +57,8 @@ export class AppComponent {
   
   openAboutDialog(){
     let dialogRef = this.dialog.open(AboutDialog, {
-      width: '80%',
-      height:'80%',
+      // width: '80%',
+      // height:'80%',
       data: { name: "this.name", animal: "this.animal" }
     });
 
