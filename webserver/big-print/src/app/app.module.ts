@@ -13,7 +13,9 @@ import {MatCardModule,MatGridListModule,MatDialogModule,
   MatButtonModule,MatStepperModule,MatFormFieldModule,
   MatInputModule
 } from '@angular/material'
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FileUploadModule} from 'ng2-file-upload'
 @NgModule({
   declarations: [
     AppComponent,CreateDialog,AboutDialog,DiagnosticsDialog,ViewDialog
@@ -29,9 +31,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
-  
-    
+    MatInputModule,
+    FileUploadModule
     
   ],
   entryComponents: [
