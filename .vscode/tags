@@ -93,9 +93,11 @@ pas	../archive/mt2.py	/^pas=1;$/;"	kind:variable	line:54
 pi	../control/test.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
 pi	../control/test2.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
 pi	../control/test3.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
+pi	../control/test4.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
 quad	../control/test.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
 quad	../control/test2.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
 quad	../control/test3.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
+quad	../control/test4.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
 rotate	../archive/stepper.py	/^	def rotate(self,rotatons):$/;"	kind:member	line:82
 rotate	../control/steppers.py	/^	def rotate(self,rotations):$/;"	kind:member	line:63
 rotate_deg	../archive/stepper.py	/^	def rotate_deg(self,degrees):$/;"	kind:member	line:76
@@ -103,10 +105,12 @@ rotate_deg	../control/steppers.py	/^	def rotate_deg(self,degrees):$/;"	kind:memb
 rotate_rot	../archive/stepper.py	/^	def rotate_rot(self,rotations):$/;"	kind:member	line:79
 rotate_steps	../archive/stepper.py	/^	def rotate_steps(self,numsteps):$/;"	kind:member	line:60
 rotsbymm	../control/test3.py	/^def rotsbymm(mm):$/;"	kind:function	line:8
+rotsbymm	../control/test4.py	/^def rotsbymm(mm):$/;"	kind:function	line:8
 rpm	../archive/mt2.py	/^rpm=rps*60;$/;"	kind:variable	line:77
 rps	../archive/mt2.py	/^rps=1\/spr$/;"	kind:variable	line:76
 s	../archive/test.py	/^s = Stepper(24,23,6,12,Stepper.OUTPUT_DIRECT)$/;"	kind:variable	line:28
 s	../control/test3.py	/^s = quad.getStepper(4)$/;"	kind:variable	line:12
+s	../control/test4.py	/^s = quad.getStepper(4)$/;"	kind:variable	line:12
 s1	../control/test.py	/^s1 = quad.getStepper(1)$/;"	kind:variable	line:9
 s2	../control/test.py	/^s2 = quad.getStepper(2)$/;"	kind:variable	line:8
 s3	../control/test.py	/^s3 = quad.getStepper(3)$/;"	kind:variable	line:10
@@ -118,6 +122,7 @@ speed	../control/test2.py	/^speed=200$/;"	kind:variable	line:12
 speed	../control/test3.py	/^speed=100$/;"	kind:variable	line:53
 speed	../control/test3.py	/^speed=20$/;"	kind:variable	line:14
 speed	../control/test3.py	/^speed=50$/;"	kind:variable	line:34
+speed	../control/test4.py	/^speed=150$/;"	kind:variable	line:14
 spin_left	../archive/motortest.py	/^def spin_left():$/;"	kind:function	line:34
 spin_right	../archive/motortest.py	/^def spin_right():$/;"	kind:function	line:37
 spr	../archive/mt2.py	/^spr = stop-start$/;"	kind:variable	line:75
@@ -132,5 +137,6 @@ test.py	../archive/test.py	1;"	kind:file	line:1
 test.py	../control/test.py	1;"	kind:file	line:1
 test2.py	../control/test2.py	1;"	kind:file	line:1
 test3.py	../control/test3.py	1;"	kind:file	line:1
+test4.py	../control/test4.py	1;"	kind:file	line:1
 up	../archive/motortest.py	/^up=27$/;"	kind:variable	line:13
 update_GPIOs	../archive/stepper.py	/^	def update_GPIOs (self):$/;"	kind:member	line:33
