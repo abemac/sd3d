@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Create a Print Task </h1>
+<div mat-dialog-content>
+    <mat-horizontal-stepper [linear]="true">
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Name</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="Task Name" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button matStepperNext color="primary">Next</button>
+                </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="true">
+                <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Upload STL</ng-template>
+                    <div ng2FileDrop
+                        [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                        (fileOver)="fileOverBase($event)"
+                        [uploader]="uploader"
+                        class="well my-drop-zone">
+                       Drag a file here
+                   </div>                   
+                <div>
+                    <button mat-raised-button matStepperPrevious color="basic">Back</button>
+                    <button mat-raised-button matStepperNext color="primary">Next</button>
+                </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Verify</ng-template>
+                You are now done.
+                <div>
+                <button mat-raised-button matStepperPrevious color="primary">Back</button>
+                </div>
+            </mat-step>
+     </mat-horizontal-stepper>
+</div>
+<div class="footer">
+    <div mat-dialog-actions>
+        <button mat-raised-button [mat-dialog-close]>Cancel</button>
+    </div>
+</div>

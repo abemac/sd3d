@@ -4,10 +4,10 @@
 
   <div class="grid">
     <mat-grid-list cols="2" rowHeight="2:1" gutterSize="0px">
-      <mat-grid-tile colspan="1" rowspan="1" style="background:rgba(29,105,179,.5)">Create Task</mat-grid-tile>
-      <mat-grid-tile colspan="1" rowspan=1 style="background:rgba(255,154,0,.5)">View Tasks</mat-grid-tile>
-      <mat-grid-tile colspan="1" rowspan="1" style="background:rgba(255,154,0,.5)">Diagnostics</mat-grid-tile>
-      <mat-grid-tile colspan="1" rowspan="1" style="background:rgba(29,105,179,.5)">About</mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1" style="background:rgba(29,105,179,.5)" (click)="openCreateDialog()">Create Task</mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan=1 style="background:rgba(255,154,0,.5)" (click)="openViewDialog()">View Tasks</mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1" style="background:rgba(255,154,0,.5)" (click)="openDiagnosticsDialog()">Diagnostics</mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1" style="background:rgba(29,105,179,.5)" (click)="openAboutDialog()">About</mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>

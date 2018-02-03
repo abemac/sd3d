@@ -1,0 +1,142 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IODIRA	../control/steppers.py	/^	IODIRA=0x00$/;"	kind:variable	line:85
+IODIRB	../control/steppers.py	/^	IODIRB=0x01$/;"	kind:variable	line:86
+OLATA	../control/steppers.py	/^	OLATA=0x14$/;"	kind:variable	line:87
+OLATA_VAL	../control/steppers.py	/^	OLATA_VAL=0x0$/;"	kind:variable	line:89
+OLATB	../control/steppers.py	/^	OLATB=0x15$/;"	kind:variable	line:88
+OLATB_VAL	../control/steppers.py	/^	OLATB_VAL=0x0$/;"	kind:variable	line:90
+OUTPUT_DIRECT	../archive/stepper.py	/^	OUTPUT_DIRECT=1$/;"	kind:variable	line:6
+OUTPUT_I2C	../archive/stepper.py	/^	OUTPUT_I2C=0$/;"	kind:variable	line:5
+Quad	../control/steppers.py	/^class Quad:$/;"	kind:class	line:84
+SPEED_FAST	../archive/stepper.py	/^	SPEED_FAST=	.0025	  #about 115 rpm$/;"	kind:variable	line:9
+SPEED_FAST	../control/steppers.py	/^SPEED_FAST=	150$/;"	kind:variable	line:6
+SPEED_MEDIUM	../archive/stepper.py	/^	SPEED_MEDIUM = .005    #about 60 rpm$/;"	kind:variable	line:11
+SPEED_MEDIUM	../control/steppers.py	/^SPEED_MEDIUM = 100$/;"	kind:variable	line:8
+SPEED_MEDIUM_FAST	../archive/stepper.py	/^	SPEED_MEDIUM_FAST=.003     #about 95 rpm$/;"	kind:variable	line:10
+SPEED_MEDIUM_FAST	../control/steppers.py	/^SPEED_MEDIUM_FAST=125$/;"	kind:variable	line:7
+SPEED_MEDIUM_SLOW	../archive/stepper.py	/^	SPEED_MEDIUM_SLOW = .01  #about 30 rpm$/;"	kind:variable	line:12
+SPEED_MEDIUM_SLOW	../control/steppers.py	/^SPEED_MEDIUM_SLOW = 50$/;"	kind:variable	line:9
+SPEED_SLOW	../archive/stepper.py	/^	SPEED_SLOW=.02 			#about 15 rpm$/;"	kind:variable	line:13
+SPEED_SLOW	../control/steppers.py	/^SPEED_SLOW=20$/;"	kind:variable	line:10
+SPEED_VERY_FAST	../archive/stepper.py	/^	SPEED_VERY_FAST=.002  #about 140 rpm$/;"	kind:variable	line:8
+SPEED_VERY_FAST	../control/steppers.py	/^SPEED_VERY_FAST=200$/;"	kind:variable	line:5
+SPEED_VERY_SLOW	../archive/stepper.py	/^	SPEED_VERY_SLOW=.04     #about 7 rpm$/;"	kind:variable	line:14
+SPEED_VERY_SLOW	../control/steppers.py	/^SPEED_VERY_SLOW=10$/;"	kind:variable	line:11
+Stepper	../archive/stepper.py	/^class Stepper:$/;"	kind:class	line:4
+__init__	../archive/stepper.py	/^	def __init__(self,pin_1A,pin_2A,pin_3A,pin_4A,output_type,stepsperrev=200):$/;"	kind:member	line:16
+__init__	../control/steppers.py	/^		def __init__(self,pi,i2c):$/;"	kind:member	line:132
+__init__	../control/steppers.py	/^		def __init__(self,pi,i2c):$/;"	kind:member	line:155
+__init__	../control/steppers.py	/^		def __init__(self,pi,i2c):$/;"	kind:member	line:178
+__init__	../control/steppers.py	/^		def __init__(self,pi,i2c):$/;"	kind:member	line:200
+__init__	../control/steppers.py	/^	def __init__(self,i2c_addr,pi):$/;"	kind:member	line:91
+__init__	../control/steppers.py	/^	def __init__(self,pi,i2c):$/;"	kind:member	line:19
+__metaclass__	../control/steppers.py	/^	__metaclass__ = abc.ABCMeta;$/;"	kind:variable	line:16
+_off	../control/steppers.py	/^	def _off(self):$/;"	kind:member	line:75
+_rotate_deg	../control/steppers.py	/^	def _rotate_deg(self,degrees):$/;"	kind:member	line:55
+_rotate_rot	../control/steppers.py	/^	def _rotate_rot(self,rotations):$/;"	kind:member	line:60
+_rotate_steps	../control/steppers.py	/^	def _rotate_steps(self,numsteps):$/;"	kind:member	line:39
+_setSpeed	../control/steppers.py	/^	def _setSpeed(self,rpm):$/;"	kind:member	line:28
+_startWorkerThread	../control/steppers.py	/^	def _startWorkerThread(self):$/;"	kind:member	line:70
+_stepper	../control/steppers.py	/^class _stepper:$/;"	kind:class	line:15
+_stepper1	../control/steppers.py	/^	class _stepper1(_stepper):$/;"	kind:class	line:130
+_stepper2	../control/steppers.py	/^	class _stepper2(_stepper):$/;"	kind:class	line:153
+_stepper3	../control/steppers.py	/^	class _stepper3(_stepper):$/;"	kind:class	line:176
+_stepper4	../control/steppers.py	/^	class _stepper4(_stepper):$/;"	kind:class	line:198
+_update_GPIOs	../control/steppers.py	/^		def _update_GPIOs(self):$/;"	kind:member	line:136
+_update_GPIOs	../control/steppers.py	/^		def _update_GPIOs(self):$/;"	kind:member	line:159
+_update_GPIOs	../control/steppers.py	/^		def _update_GPIOs(self):$/;"	kind:member	line:181
+_update_GPIOs	../control/steppers.py	/^		def _update_GPIOs(self):$/;"	kind:member	line:204
+_update_GPIOs	../control/steppers.py	/^	def _update_GPIOs(self):$/;"	kind:member	line:34
+_worker	../control/steppers.py	/^	def _worker(self):$/;"	kind:member	line:65
+barrier	../control/steppers.py	/^	def barrier(self):$/;"	kind:member	line:125
+barrier	../control/steppers.py	/^	def barrier(self):$/;"	kind:member	line:81
+close	../control/steppers.py	/^	def close(self):$/;"	kind:member	line:106
+direction	../archive/motortest.py	/^direction="left"$/;"	kind:variable	line:29
+down	../archive/motortest.py	/^down=20$/;"	kind:variable	line:14
+duty	../archive/motortest.py	/^duty=50$/;"	kind:variable	line:30
+fdown	../archive/motortest.py	/^def fdown(x):$/;"	kind:function	line:58
+freq	../archive/motortest.py	/^freq=100$/;"	kind:variable	line:31
+fstop	../archive/motortest.py	/^def fstop(x):$/;"	kind:function	line:65
+fup	../archive/motortest.py	/^def fup(x):$/;"	kind:function	line:52
+getStepper	../control/steppers.py	/^	def getStepper(self,num):$/;"	kind:member	line:112
+getSteppers	../control/steppers.py	/^	def getSteppers(self):$/;"	kind:member	line:123
+motor_1A	../archive/motortest.py	/^motor_1A=24$/;"	kind:variable	line:9
+motor_1A	../archive/mt2.py	/^motor_1A=24$/;"	kind:variable	line:9
+motor_2A	../archive/motortest.py	/^motor_2A=23$/;"	kind:variable	line:10
+motor_2A	../archive/mt2.py	/^motor_2A=23$/;"	kind:variable	line:10
+motor_3A	../archive/motortest.py	/^motor_3A=6$/;"	kind:variable	line:11
+motor_3A	../archive/mt2.py	/^motor_3A=6$/;"	kind:variable	line:11
+motor_4A	../archive/motortest.py	/^motor_4A=23$/;"	kind:variable	line:12
+motor_4A	../archive/mt2.py	/^motor_4A=12$/;"	kind:variable	line:12
+motor_enable	../archive/motortest.py	/^motor_enable=25$/;"	kind:variable	line:6
+motor_enable	../archive/mt2.py	/^motor_enable=25$/;"	kind:variable	line:6
+motor_enable	../archive/test.py	/^motor_enable=25$/;"	kind:variable	line:15
+motor_enable_2	../archive/motortest.py	/^motor_enable_2=21$/;"	kind:variable	line:7
+motor_enable_2	../archive/mt2.py	/^motor_enable_2=21$/;"	kind:variable	line:7
+motor_enable_2	../archive/test.py	/^motor_enable_2=21$/;"	kind:variable	line:16
+motor_enable_btn	../archive/motortest.py	/^motor_enable_btn=19$/;"	kind:variable	line:8
+motor_enable_btn	../archive/mt2.py	/^motor_enable_btn=19$/;"	kind:variable	line:8
+motor_enable_btn	../archive/test.py	/^motor_enable_btn=19$/;"	kind:variable	line:17
+motortest.py	../archive/motortest.py	1;"	kind:file	line:1
+mt2.py	../archive/mt2.py	1;"	kind:file	line:1
+off	../control/steppers.py	/^	def off(self):$/;"	kind:member	line:78
+on	../archive/motortest.py	/^on=False;$/;"	kind:variable	line:28
+on	../archive/mt2.py	/^on=True;$/;"	kind:variable	line:26
+onBtnPress	../archive/motortest.py	/^def onBtnPress(pinNum):$/;"	kind:function	line:41
+p	../archive/motortest.py	/^p=GPIO.PWM(motor_enable,freq)$/;"	kind:variable	line:32
+pas	../archive/mt2.py	/^pas=1;$/;"	kind:variable	line:54
+pi	../control/test.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
+pi	../control/test2.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
+pi	../control/test3.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
+pi	../control/test4.py	/^pi = pigpio.pi()$/;"	kind:variable	line:4
+quad	../control/test.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
+quad	../control/test2.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
+quad	../control/test3.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
+quad	../control/test4.py	/^quad = steppers.Quad(0x20,pi)$/;"	kind:variable	line:6
+rotate	../archive/stepper.py	/^	def rotate(self,rotatons):$/;"	kind:member	line:82
+rotate	../control/steppers.py	/^	def rotate(self,rotations):$/;"	kind:member	line:63
+rotate_deg	../archive/stepper.py	/^	def rotate_deg(self,degrees):$/;"	kind:member	line:76
+rotate_deg	../control/steppers.py	/^	def rotate_deg(self,degrees):$/;"	kind:member	line:58
+rotate_rot	../archive/stepper.py	/^	def rotate_rot(self,rotations):$/;"	kind:member	line:79
+rotate_steps	../archive/stepper.py	/^	def rotate_steps(self,numsteps):$/;"	kind:member	line:60
+rotsbymm	../control/test3.py	/^def rotsbymm(mm):$/;"	kind:function	line:8
+rotsbymm	../control/test4.py	/^def rotsbymm(mm):$/;"	kind:function	line:8
+rpm	../archive/mt2.py	/^rpm=rps*60;$/;"	kind:variable	line:77
+rps	../archive/mt2.py	/^rps=1\/spr$/;"	kind:variable	line:76
+s	../archive/test.py	/^s = Stepper(24,23,6,12,Stepper.OUTPUT_DIRECT)$/;"	kind:variable	line:28
+s	../control/test3.py	/^s = quad.getStepper(4)$/;"	kind:variable	line:12
+s	../control/test4.py	/^s = quad.getStepper(4)$/;"	kind:variable	line:12
+s1	../control/test.py	/^s1 = quad.getStepper(1)$/;"	kind:variable	line:9
+s2	../control/test.py	/^s2 = quad.getStepper(2)$/;"	kind:variable	line:8
+s3	../control/test.py	/^s3 = quad.getStepper(3)$/;"	kind:variable	line:10
+s4	../control/test.py	/^s4 = quad.getStepper(4)$/;"	kind:variable	line:11
+setSpeed	../archive/stepper.py	/^	def setSpeed(self,speed):$/;"	kind:member	line:30
+setSpeed	../control/steppers.py	/^	def setSpeed(self,rpm):$/;"	kind:member	line:30
+speed	../control/test.py	/^speed=150$/;"	kind:variable	line:14
+speed	../control/test2.py	/^speed=200$/;"	kind:variable	line:12
+speed	../control/test3.py	/^speed=100$/;"	kind:variable	line:53
+speed	../control/test3.py	/^speed=20$/;"	kind:variable	line:14
+speed	../control/test3.py	/^speed=50$/;"	kind:variable	line:34
+speed	../control/test4.py	/^speed=150$/;"	kind:variable	line:14
+spin_left	../archive/motortest.py	/^def spin_left():$/;"	kind:function	line:34
+spin_right	../archive/motortest.py	/^def spin_right():$/;"	kind:function	line:37
+spr	../archive/mt2.py	/^spr = stop-start$/;"	kind:variable	line:75
+start	../archive/mt2.py	/^start=time.time();$/;"	kind:variable	line:72
+step_4	../archive/mt2.py	/^def step_4 (p):$/;"	kind:function	line:28
+stepper.py	../archive/stepper.py	1;"	kind:file	line:1
+steppers.py	../control/steppers.py	1;"	kind:file	line:1
+steps_4	../archive/mt2.py	/^def steps_4(value):$/;"	kind:function	line:55
+stop	../archive/motortest.py	/^stop=5$/;"	kind:variable	line:15
+stop	../archive/mt2.py	/^stop=time.time();$/;"	kind:variable	line:74
+test.py	../archive/test.py	1;"	kind:file	line:1
+test.py	../control/test.py	1;"	kind:file	line:1
+test2.py	../control/test2.py	1;"	kind:file	line:1
+test3.py	../control/test3.py	1;"	kind:file	line:1
+test4.py	../control/test4.py	1;"	kind:file	line:1
+up	../archive/motortest.py	/^up=27$/;"	kind:variable	line:13
+update_GPIOs	../archive/stepper.py	/^	def update_GPIOs (self):$/;"	kind:member	line:33
