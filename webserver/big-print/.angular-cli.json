@@ -57,8 +57,7 @@
     "styleExt": "css",
     "component": {},
     "serve":{
-      "port":24357,
-      "host":"bigprint.technology"
+      "port":24357
     }
   }
 }

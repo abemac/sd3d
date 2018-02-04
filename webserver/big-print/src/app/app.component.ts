@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { CreateDialog } from './create/create.component';
 import { ViewDialog } from './view/view.component';
 import { DiagnosticsDialog } from './diagnostics/diagnostics.component';
@@ -10,16 +10,19 @@ import { MatDialog } from '@angular/material';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'BigPrint Control'
-
+  
   constructor(public dialog: MatDialog) {}
 
+  ngOnInit(){
+
+  }
 
   openCreateDialog(){
     let dialogRef = this.dialog.open(CreateDialog, {
-      // width: '80%',
-      // height:'80%',
+      width: '80%',
+      height:'80%',
       data: { name: "this.name", animal: "this.animal" }
     });
 
@@ -31,8 +34,8 @@ export class AppComponent {
   
   openViewDialog(){
     let dialogRef = this.dialog.open(ViewDialog, {
-      // width: '80%',
-      // height:'80%',
+      width: '80%',
+      height:'80%',
       data: { name: "this.name", animal: "this.animal" }
     });
 
@@ -44,8 +47,8 @@ export class AppComponent {
   
   openDiagnosticsDialog(){
     let dialogRef = this.dialog.open(DiagnosticsDialog, {
-      // width: '80%',
-      // height:'80%',
+      width: '80%',
+      height:'80%',
       data: { name: "this.name", animal: "this.animal" }
     });
 
