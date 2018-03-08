@@ -36,14 +36,14 @@ class _stepper:
 		return;
 	
 		
-	def _rotate_steps(self,numsteps):
+	def _rotate_steps(self,numsteps,smoothstart):
 		if(numsteps<0):
 			for i in range (0,abs(numsteps)):
 				self.state+=1
 				if(self.state>=5):
 					self.state=1;
 				self._update_GPIOs()
-				time.sleep(self.delay)		
+				time.sleep(self.delay)
 		else:
 			for i in range (0,abs(numsteps)):
 				if(self.state<=1):
@@ -52,16 +52,16 @@ class _stepper:
 				self._update_GPIOs()
 				time.sleep(self.delay)
 				
-	def _rotate_deg(self,degrees):
+	def _rotate_deg(self,degrees,smoothstart):
 		steps=int(self.ticksperrev * (degrees/360.0))
-		self._rotate_steps(steps)
-	def rotate_deg(self,degrees):
-		self.queue.put(lambda: self._rotate_deg(degrees))
-	def _rotate_rot(self,rotations):
+		self._rotate_steps(steps,smoothstart)
+	def rotate_deg(self,degrees,smoothstart=False):
+		self.queue.put(lambda: self._rotate_deg(degrees,smoothstart))
+	def _rotate_rot(self,rotations,smoothstart):
 		steps=int(self.ticksperrev * rotations)
-		self._rotate_steps(steps)
-	def rotate(self,rotations):
-		self.queue.put(lambda: self._rotate_rot(rotations))
+		self._rotate_steps(steps,smoothstart)
+	def rotate(self,rotations,smoothstart=False):
+		self.queue.put(lambda: self._rotate_rot(rotations,smoothstart))
 	def _worker(self):
 		while True:
 			action = self.queue.get();
@@ -173,7 +173,7 @@ class Quad:
 				Quad.OLATB_VAL&=0b00001111
 			self.pi.i2c_write_byte_data(self.i2c,Quad.OLATB,Quad.OLATB_VAL)
 	
-	class _stepper3(_stepper):
+	class _stepper4(_stepper):
 		
 		def __init__(self,pi,i2c):
 			super().__init__(pi,i2c)
@@ -195,7 +195,7 @@ class Quad:
 				Quad.OLATA_VAL&=0b00001111
 			self.pi.i2c_write_byte_data(self.i2c,Quad.OLATA,Quad.OLATA_VAL)
 	
-	class _stepper4(_stepper):
+	class _stepper3(_stepper):
 		
 		def __init__(self,pi,i2c):
 			super().__init__(pi,i2c)
