@@ -179,16 +179,16 @@ class Quad:
 			super().__init__(pi,i2c)
 		
 		def _update_GPIOs(self):
-			if self.state==1:
+			if self.state==4:
 				Quad.OLATA_VAL|=0b10100000
 				Quad.OLATA_VAL&=0b10101111
-			elif self.state==2:
+			elif self.state==3:
 				Quad.OLATA_VAL|=0b01100000
 				Quad.OLATA_VAL&=0b01101111
-			elif self.state==3:
+			elif self.state==2:
 				Quad.OLATA_VAL|=0b01010000
 				Quad.OLATA_VAL&=0b01011111
-			elif self.state==4:
+			elif self.state==1:
 				Quad.OLATA_VAL|=0b10010000
 				Quad.OLATA_VAL&=0b10011111
 			elif self.state==0:
@@ -202,16 +202,16 @@ class Quad:
 			
 		
 		def _update_GPIOs(self):
-			if self.state==1:
+			if self.state==4:
 				Quad.OLATA_VAL|=0b00001010
 				Quad.OLATA_VAL&=0b11111010
-			elif self.state==2:
+			elif self.state==3:
 				Quad.OLATA_VAL|=0b00000110
 				Quad.OLATA_VAL&=0b11110110
-			elif self.state==3:
+			elif self.state==2:
 				Quad.OLATA_VAL|=0b00000101
 				Quad.OLATA_VAL&=0b11110101
-			elif self.state==4:
+			elif self.state==1:
 				Quad.OLATA_VAL|=0b00001001
 				Quad.OLATA_VAL&=0b11111001
 			elif self.state==0:
