@@ -108,7 +108,10 @@ class Quad:
 		self.pi.i2c_write_byte_data(self.i2c,Quad.OLATB,0x00) ;#Set B outputs as 0
 		self.pi.i2c_close(self.i2c)
 		self.s1=None;
-	
+	def off(self):
+		self.pi.i2c_write_byte_data(self.i2c,Quad.OLATA,0x00) ;#Set A outputs as 0
+		self.pi.i2c_write_byte_data(self.i2c,Quad.OLATB,0x00) ;#Set B outputs as 0
+		
 	def getStepper(self,num):
 		if num==1:
 			return self.s1
