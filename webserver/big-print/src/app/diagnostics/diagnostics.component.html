@@ -1,6 +1,24 @@
 <h1 mat-dialog-title>Diagnostics</h1>
 <div mat-dialog-content>
-    
+    <div style="text-align: center; margin:50px">
+        <form class="example-form">
+            <p>Enter Password to run the demo</p>
+            <mat-form-field>
+                    <input matInput placeholder="Password" type="password"  [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
+            </mat-form-field><br>
+            <button mat-raised-button color="accent" (click)=rundemo() [disabled]="demoRunning" >Run Demo</button><br>
+            
+        </form>
+        <div *ngIf="demoRunning">
+            <h1>Demo Running...</h1>
+                <i class="fa fa-spinner fa-spin" style="font-size:50px;color:white"></i>
+        </div>
+        <div *ngIf="!demoRunning && error">
+            <p style="color:red">Incorrect Password</p>
+        </div>
+
+    </div>
+        
 </div>
 <div class="footer">
     <div mat-dialog-actions>

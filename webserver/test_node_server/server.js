@@ -10,6 +10,7 @@ var running = false
 app.route('/startDemo').get((req,res)=>{
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
+    res.setHeader('content-type', 'text/plain');
     if(query.token == '6288260a217ca1838cd8c3f25d3fe475'){
         console.log('authenticated')
     }else{
@@ -30,14 +31,6 @@ app.route('/startDemo').get((req,res)=>{
     
 })
 app.route('/status').get((req,res)=>{
-    var url_parts = url.parse(req.url, true);
-    var query = url_parts.query;
-    if(query.token == '6288260a217ca1838cd8c3f25d3fe475'){
-        console.log('authenticated')
-    }else{
-        res.status(500).send("ERROR")
-        return
-    }
     res.status(200).send(running)
     
     

@@ -8,7 +8,6 @@ import {AboutDialog} from './about/about.component'
 import {DiagnosticsDialog} from './diagnostics/diagnostics.component'
 import {ViewDialog} from './view/view.component'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
 import {MatCardModule,MatGridListModule,MatDialogModule,
   MatButtonModule,MatStepperModule,MatFormFieldModule,
   MatInputModule
@@ -16,6 +15,8 @@ import {MatCardModule,MatGridListModule,MatDialogModule,
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FileUploadModule} from 'ng2-file-upload'
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,CreateDialog,AboutDialog,DiagnosticsDialog,ViewDialog
@@ -32,7 +33,8 @@ import {FileUploadModule} from 'ng2-file-upload'
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    FileUploadModule
+    FileUploadModule,
+    HttpClientModule
     
   ],
   entryComponents: [
